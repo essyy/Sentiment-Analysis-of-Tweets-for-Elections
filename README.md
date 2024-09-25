@@ -27,6 +27,9 @@ sia = SentimentIntensityAnalyzer()
 merged_df['vader_polarity'] = merged_df['text'].apply(lambda x: sia.polarity_scores(str(x))['compound'])
 merged_df['vader_sentiment'] = merged_df['vader_polarity'].apply(lambda x: 'positive' if x > 0.25 else ('neutral' if -0.25 <= x <= 0.25 else 'negative'))
  ```
+![image](https://github.com/user-attachments/assets/785c102d-eb29-4104-8c1e-8f31d2c8fc1e)
+![image](https://github.com/user-attachments/assets/dc5c8709-3ec2-4226-964e-8a1efd3f65de)
+
 3. **Visualization - Pie Chart**:
 
 Generates a pie chart showing the distribution of sentiment in the dataset.
@@ -36,6 +39,8 @@ sentiment = merged_df['sentiment'].value_counts()
 sentiment_colors = ['red', (1.0, 0.75, 0.0), 'green']
 sentiment.plot(kind='pie', title='Sentiment Analysis of the Post', colors=sentiment_colors, autopct='%1.1f%%', wedgeprops=dict(width=0.6))
  ```
+![image](https://github.com/user-attachments/assets/4006de62-9193-46f2-abbc-b029bfeb789f)
+
 4.**Visualization - Word Cloud**:
 
 Generates a word cloud to represent the most frequent words in the dataset.
@@ -50,5 +55,7 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.show()
  ```
+![image](https://github.com/user-attachments/assets/3c019395-3532-4639-89df-de28ba792f34)
+
 **Conclusion**:
 The project effectively demonstrates the use of both TextBlob and VADER for sentiment analysis, providing insightful visualizations of the results.
