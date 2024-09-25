@@ -13,14 +13,20 @@ The analysis provides a clearer picture of how each candidate was perceived duri
 ****************************************************************************************
 ## Key Steps:
 
-1. **Sentiment Classification with TextBlob**:
+1. **Tweet Scraping with `nscrapper`**:
+   - The `nscrapper` library was used to scrape tweets related to Donald Trump and Kamala Harris from social media platforms, ensuring a rich dataset for sentiment analysis.
+![image](https://github.com/user-attachments/assets/11ad6bfa-96be-46a4-848e-bad8961644eb)
+
+2. **Lexical Diversity Analysis**:
+   - The dataset was tested for lexical diversity to measure the variety of unique words used in discussions about the candidates, providing insights into the richness of the language.
+3. **Sentiment Classification with TextBlob**:
    - Calculates sentiment polarity of the text (`positive`, `neutral`, `negative`).
    
    ```python
    from textblob import TextBlob
    merged_df['polarity'] = merged_df['text'].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
    merged_df['sentiment'] = merged_df['polarity'].apply(lambda x: 'positive' if x > 0 else ('neutral' if x == 0 else 'negative'))
-2 **Sentiment Classification with VADER**:
+4. **Sentiment Classification with VADER**:
 
 Classifies sentiment using the VADER model, particularly effective for social media text.
  ```python
@@ -33,7 +39,7 @@ merged_df['vader_sentiment'] = merged_df['vader_polarity'].apply(lambda x: 'posi
 ![image](https://github.com/user-attachments/assets/785c102d-eb29-4104-8c1e-8f31d2c8fc1e)
 ![image](https://github.com/user-attachments/assets/dc5c8709-3ec2-4226-964e-8a1efd3f65de)
 
-3. **Visualization - Pie Chart**:
+5. **Visualization - Pie Chart**:
 
 Generates a pie chart showing the distribution of sentiment in the dataset.
  ```python
@@ -44,7 +50,7 @@ sentiment.plot(kind='pie', title='Sentiment Analysis of the Post', colors=sentim
  ```
 ![image](https://github.com/user-attachments/assets/4006de62-9193-46f2-abbc-b029bfeb789f)
 
-4.**Visualization - Word Cloud**:
+6.**Visualization - Word Cloud**:
 
 Generates a word cloud to represent the most frequent words in the dataset.
 python
