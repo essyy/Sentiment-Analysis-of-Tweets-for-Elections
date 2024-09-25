@@ -3,6 +3,9 @@
 This project analyzes social media sentiments surrounding the elections of Donald Trump and Kamala Harris. Using Python libraries like `TextBlob` and `VADER SentimentIntensityAnalyzer`, the dataset is processed to classify public opinions about the candidates into three categories: positive, neutral, and negative.
 
 ## Key Features:
+- **Tweet Scraping**: Uses `nscrapper` to collect tweets related to Trump and Harris.
+- **Lexical Diversity**: Analyzes the variety of words used in the dataset.
+- **Sentiment Analysis**: Applies `TextBlob` and `VADER` to classify sentiment on the candidates.
 - **Sentiment Analysis**: Applies `TextBlob` and `VADER` to evaluate the sentiment of public comments about Trump and Harris.
 - **Visualizations**: Generates pie charts to display the distribution of sentiments for each candidate and word clouds to highlight common words in the dataset.
 
