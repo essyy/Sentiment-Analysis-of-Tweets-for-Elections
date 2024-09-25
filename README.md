@@ -15,7 +15,7 @@ The analysis provides a clearer picture of how each candidate was perceived duri
 
 1. **Tweet Scraping with `nscrapper`**:
    - The `nscrapper` library was used to scrape tweets related to Donald Trump and Kamala Harris from social media platforms, ensuring a rich dataset for sentiment analysis.
-![image](https://github.com/user-attachments/assets/11ad6bfa-96be-46a4-848e-bad8961644eb)
+
 
 2. **Lexical Diversity Analysis**:
    - The dataset was tested for lexical diversity to measure the variety of unique words used in discussions about the candidates, providing insights into the richness of the language.
